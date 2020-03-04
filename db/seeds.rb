@@ -1,5 +1,6 @@
 require_relative '../lib/teacher.rb'
 require_relative '../lib/student.rb'
+require_relative '../lib/courses.rb'
 Teacher.destroy_all
 Student.destroy_all
 Course.destroy_all
@@ -18,6 +19,6 @@ yuga_aoyama = Student.create(name: "Yuga Aoyama", quirk: "Navel Lazer", temperme
 
 course_a = Course.create(student: izuku_midoriya, teacher: toshinori_yagi)
 course_b = Course.create(student: bakugo_katsuki, teacher: shota_aizawa)
-
-
-
+course_c = Course.create(student: minoru_mineta, teacher: toshinori_yagi)
+course_d = Course.create(student: izuku_midoriya, teacher: nemuri_kayama)
+course_e = Course.create(student: yuga_aoyama, teacher: sekijiro_kan)
