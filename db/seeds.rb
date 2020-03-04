@@ -2,6 +2,7 @@ require_relative '../lib/teacher.rb'
 require_relative '../lib/student.rb'
 Teacher.destroy_all
 Student.destroy_all
+Course.destroy_all
 
 toshinori_yagi = Teacher.create(name: "Toshinori Yagi", quirk: "One For All", ranking: 1,nickname: "All Might")
 shota_aizawa = Teacher.create(name: "Shota Aizawa", quirk: "Erasure", ranking: 2,nickname: "Eraser Head")
@@ -15,6 +16,8 @@ shoto_todoroki = Student.create(name: "Shoto Todoroki", quirk: "Fire and Ice", t
 minoru_mineta = Student.create(name: "Minoru Mineta", quirk: "Pop Off", temperment: "Perverted",nickname: "Fresh-Picked Hero: Grape Juice")
 yuga_aoyama = Student.create(name: "Yuga Aoyama", quirk: "Navel Lazer", temperment: "Egotistical",nickname: "Shining Hero: Can't Stop Twinkling")
 
+course_a = Course.create(student: izuku_midoriya, teacher: toshinori_yagi)
+course_b = Course.create(student: bakugo_katsuki, teacher: shota_aizawa)
 
 
 
