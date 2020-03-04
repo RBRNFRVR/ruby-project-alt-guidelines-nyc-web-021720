@@ -1,6 +1,6 @@
 require_relative '../lib/teacher.rb'
 require_relative '../lib/student.rb'
-require_relative '../lib/courses.rb'
+require_relative '../lib/course.rb'
 Teacher.destroy_all
 Student.destroy_all
 Course.destroy_all
