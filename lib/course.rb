@@ -11,6 +11,4 @@ class Course < ActiveRecord::Base
         teacher_courses = self.all.select{|courses|courses.teacher.name == teacher_name}
         teacher_courses.collect{|courses| courses.student.name}
     end
-
-    def add_
 end 

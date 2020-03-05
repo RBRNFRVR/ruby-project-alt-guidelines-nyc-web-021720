@@ -1,9 +1,9 @@
 class Teacher < ActiveRecord::Base 
-    has_many :courses
+    has_many :courses, :dependent => :delete_all
     has_many :students, through: :courses
 
     def self.teacher_search(name)
-     self.all.select{|teacher| teacher.name == name || teacher.nickname == name}[0]
+     all.select{|teacher| teacher.name.downcase == name.downcase || teacher.nickname.downcase == name.downcase}[0]
     end 
     
     def self.delete_hero(input)

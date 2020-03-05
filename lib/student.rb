@@ -1,10 +1,10 @@
 class Student < ActiveRecord::Base 
-    has_many :courses 
+    has_many :courses, :dependent=> :delete_all
     has_many :teachers, through: :courses 
 
     def self.student_search(name)
-        self.all.select{|student| student.name == name || student.nickname == name}[0]
-       end 
+        self.all.select{|student| student.name.downcase == name.downcase || student.nickname.downcase == name.downcase}[0]
+     end 
        
        def self.delete_student(input)
            student_name = self.student_search(input)
@@ -16,7 +16,7 @@ class Student < ActiveRecord::Base
        end
        def self.change_nickname(name)
            student = self.student_search(name)
-           puts "Please enter new Nickname"
+           puts "what is new nickname?"
            input = gets.chomp
            student.nickname = input 
            student.save
